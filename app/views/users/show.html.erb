@@ -9,3 +9,8 @@
     <input type="submit" value="Submit" class="sign"><br>
   </form>
 </div>
+<% @tweets.each do |t| %>
+	<div class="individual-tweet">
+		<%=t.tweettext %>
+	</div>
+<% end %>
