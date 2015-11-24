@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
   	return nil unless session[:current_session]
+  	@current_user ||= User.find_by_session_token(session[:current_session])
   end 
+
+  #what the fuck dhh 
+  def logout
+  	session[:current_session] = nil
+  end
 
 end
